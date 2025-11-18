@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -29,30 +28,17 @@ export default function ContactForm() {
     <section
       id="contact"
       className="py-24 relative"
-      style={{
-        background: "linear-gradient(135deg, #0A183D 0%, #1a2a5a 50%, #0A183D 100%)",
-      }}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Susisiekite
           </h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Pasiruošę transformuoti savo verslą? Parašykite man ir aptarkime jūsų projektą
           </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        </div>
+        <div
           className="p-8 md:p-12 rounded-2xl shadow-lg border"
           style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
         >
@@ -130,7 +116,7 @@ export default function ContactForm() {
               Siųsti Žinutę
             </button>
           </form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { EtherealBackground } from "@/src/components/EtherealBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="lt">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ backgroundColor: "#0A183D" }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-[#050b20] to-[#0A183D]`}
       >
-        <EtherealBackground />
         {children}
       </body>
     </html>

@@ -1,24 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function DemoVideo() {
   return (
     <section
       id="demo"
       className="py-24 relative"
-      style={{
-        background: "linear-gradient(135deg, #0A183D 0%, #1a2a5a 50%, #0A183D 100%)",
-      }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Kaip Veikia Jūsų
             <span className="block mt-2" style={{ color: "#1ED760" }}>
@@ -28,12 +15,8 @@ export default function DemoVideo() {
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Peržiūrėkite, kaip klientai lengvai rezervuoja laiką jūsų svetainėje
           </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        </div>
+        <div
           className="relative rounded-[32px] overflow-hidden shadow-2xl border backdrop-blur-sm"
           style={{
             borderColor: "rgba(30, 215, 96, 0.25)",
@@ -57,7 +40,7 @@ export default function DemoVideo() {
               </div>
             </div>
           </video>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
