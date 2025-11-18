@@ -11,7 +11,7 @@ export default function DemoVideo() {
         background: "linear-gradient(135deg, #0A183D 0%, #1a2a5a 50%, #0A183D 100%)",
       }}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,23 +34,31 @@ export default function DemoVideo() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative rounded-2xl overflow-hidden border-2 shadow-2xl"
-          style={{ borderColor: "#1ED760" }}
+          className="relative rounded-[32px] overflow-hidden shadow-2xl border backdrop-blur-sm"
+          style={{
+            borderColor: "rgba(30, 215, 96, 0.25)",
+            backgroundColor: "#0A183D",
+          }}
         >
-          <div
-            className="w-full aspect-video flex items-center justify-center"
+          <video
+            className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+            controls={false}
+            autoPlay
+            muted
+            loop
+            playsInline
             style={{ backgroundColor: "#0A183D" }}
           >
-            <div className="text-center">
-              <div className="text-6xl mb-4">▶️</div>
-              <p className="text-white/80 text-lg mb-2">Demo Video</p>
-              <p className="text-white/60 text-sm">Placeholder for booking system demo video</p>
-              <p className="text-white/40 text-xs mt-2">(Video will loop automatically)</p>
+            <source src="/video/demo.mp4" type="video/mp4" />
+            <div className="w-full h-full flex items-center justify-center text-white/60">
+              <div className="text-center">
+                <div className="text-6xl mb-4">▶️</div>
+                <p className="text-lg">Video placeholder</p>
+              </div>
             </div>
-          </div>
+          </video>
         </motion.div>
       </div>
     </section>
   );
 }
-
