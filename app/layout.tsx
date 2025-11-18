@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grožio Verslų Svetainės - Elegantiškos Svetainės su Rezervacijų Sistemomis",
-  description: "Kuriu elegantiškas svetaines su integruotomis rezervacijų sistemomis specialiai grožio salonams, nagų studijoms ir asmeninėms paslaugoms. Leiskite klientams rezervuoti laiką tiesiogiai iš svetainės.",
+  title: "Verslo Rezervacijų Svetainės - Profesionalios Svetainės su Integruotomis Rezervacijų Sistemomis",
+  description: "Kuriu svetaines su integruotomis internetinėmis rezervacijų sistemomis paslaugų verslams. Transformuokite savo verslą su sklandžia rezervacijų patirtimi.",
 };
 
 export default function RootLayout({
@@ -24,15 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="lt" className="overflow-x-hidden">
+    <html lang="lt">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: "#0A183D", color: "#FFFFFF" }}
       >
-        <AuroraBackground className="min-h-screen">
-          <main className="relative z-10">
-            {children}
-          </main>
-        </AuroraBackground>
+        {children}
       </body>
     </html>
   );

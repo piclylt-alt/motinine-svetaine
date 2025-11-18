@@ -19,29 +19,24 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Handle form submission here
     console.log("Form submitted:", formData);
     alert("Ačiū už jūsų žinutę! Susisieksiu su jumis netrukus.");
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
-    <section
-      id="contact"
-      className="py-24 relative"
-    >
+    <section className="py-20" style={{ backgroundColor: "#0A183D" }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Susisiekite
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             Pasiruošę transformuoti savo verslą? Parašykite man ir aptarkime jūsų projektą
           </p>
         </div>
-        <div
-          className="p-8 md:p-12 rounded-2xl shadow-lg border"
-          style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
-        >
+        <div className="p-8 md:p-12 rounded-2xl shadow-lg" style={{ backgroundColor: "#0A183D", border: "2px solid #1ED760" }}>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -56,7 +51,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border outline-none transition-all text-white placeholder-white/60"
-                  style={{ backgroundColor: "#0A183D", borderColor: "#1ED760", color: "#FFFFFF" }}
+                  style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
                   placeholder="Jūsų vardas"
                 />
               </div>
@@ -72,7 +67,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border outline-none transition-all text-white placeholder-white/60"
-                  style={{ backgroundColor: "#0A183D", borderColor: "#1ED760", color: "#FFFFFF" }}
+                  style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
                   placeholder="jusu@elpastas.lt"
                 />
               </div>
@@ -88,7 +83,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg border outline-none transition-all text-white placeholder-white/60"
-                style={{ backgroundColor: "#0A183D", borderColor: "#1ED760", color: "#FFFFFF" }}
+                style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
                 placeholder="+370 600 00000"
               />
             </div>
@@ -104,7 +99,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg border outline-none transition-all resize-none text-white placeholder-white/60"
-                style={{ backgroundColor: "#0A183D", borderColor: "#1ED760", color: "#FFFFFF" }}
+                style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
                 placeholder="Papasakokite apie savo projektą..."
               />
             </div>
@@ -121,3 +116,4 @@ export default function ContactForm() {
     </section>
   );
 }
+

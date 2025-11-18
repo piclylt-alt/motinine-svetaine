@@ -7,42 +7,39 @@ export default function Testimonials() {
       rating: 5,
     },
     {
-      name: "Ema Radvilaitė",
-      business: "Nagų Studijos Savininkė",
+      name: "Mikas Čen",
+      business: "Fitness Treneris",
       content: "Profesionalus aptarnavimas nuo pradžios iki pabaigos. Svetainė puikiai atspindi mano prekės ženklą, o rezervacijų sistema yra neįtikėtinai lengva mano klientams naudoti.",
       rating: 5,
     },
     {
-      name: "Laura Kazlienė",
-      business: "Kirpyklos Savininkė",
+      name: "Ema Radvilaitė",
+      business: "Konsultantė",
       content: "Buvau skeptiška dėl internetinės rezervacijos, bet tai tikrai pakeitė viską. Mano klientai mėgsta patogumą, o aš mėgstu automatizavimą. Labai rekomenduoju!",
       rating: 5,
     },
   ];
 
   return (
-    <section
-      id="testimonials"
-      className="py-24 relative"
-    >
+    <section className="py-20" style={{ backgroundColor: "#0A183D" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ką Sako Mūsų
-            <span className="block mt-2" style={{ color: "#1ED760" }}>
+            <span className="block" style={{ color: "#1ED760" }}>
               Klientai
             </span>
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Išklausykite patenkintų grožio verslo savininkių atsiliepimų
+          <p className="text-xl text-white max-w-2xl mx-auto">
+            Išklausykite patenkintų verslo savininkių atsiliepimų
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border"
-              style={{ backgroundColor: "#0A183D", borderColor: "#1ED760" }}
+              className="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              style={{ backgroundColor: "#0A183D", border: "2px solid #1ED760" }}
             >
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -57,12 +54,12 @@ export default function Testimonials() {
                   </svg>
                 ))}
               </div>
-              <p className="text-white/90 mb-6 leading-relaxed italic">
+              <p className="text-white mb-6 leading-relaxed italic">
                 "{testimonial.content}"
               </p>
               <div>
                 <p className="font-semibold text-white">{testimonial.name}</p>
-                <p className="text-white/70 text-sm">{testimonial.business}</p>
+                <p className="text-white text-sm opacity-80">{testimonial.business}</p>
               </div>
             </div>
           ))}
@@ -71,3 +68,4 @@ export default function Testimonials() {
     </section>
   );
 }
+
